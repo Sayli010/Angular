@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'firstApp';
+  title = 'This is two way data binding';
+  heading = "Welcome to Angular!!!!"
+
+  isDisabled = true;
+
+  onSave(){
+    console.log("test")
+    this.isDisabled  = !this.isDisabled;
+  }
 }
