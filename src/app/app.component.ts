@@ -15,4 +15,7 @@ export class AppComponent {
     console.log("test")
     this.isDisabled  = !this.isDisabled;
   }
+  detectData(value){
+    this.heading = value
+  }
 }

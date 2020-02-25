@@ -5,10 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule} from '@angular/forms'
 import { from } from 'rxjs';
+import { HomeComponent } from './home/home.component';
+import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
+import { FirstDirectiveDirective } from './first-directive.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    DirectivesDemoComponent,
+    FirstDirectiveDirective
   ],
   imports: [
     FormsModule,

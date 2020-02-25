@@ -1,0 +1,61 @@
+<h1>directives-demo works!</h1>
+
+<h4>ngIf</h4>
+
+<p *ngIf="validUser; else invalidCondition">This is valid user</p>
+
+
+<h4>ng-template => Element written on ng-template is not display in browser. 
+    When we want to display that element we have to pass template name</h4>
+<ng-template #invalidCondition>
+    <p>This is invalid user</p>
+</ng-template>
+
+
+
+
+<h4>ngFor</h4>
+
+<p>ngFor in parent element(in ul tag).</p>
+<ul *ngFor="let item of students">
+    <li>{{item.name}}</li>
+</ul>
+<p>ngFor in child element(in li tag). Also display index.</p>
+<ul >
+    <li *ngFor="let item of students let i=index">{{item.name}} is {{item.age}} years old. :: {{i}}</li>
+</ul>
+<p>Display name of students of age less than or equal to 20.</p>
+<ul >
+    <li *ngFor="let item of students">
+        <div *ngIf="item.age <= 20">
+            {{item.name}} is {{item.age}} years old.
+        </div>
+    </li>
+</ul>
+
+<h4>ng-container = > We cannot use more than two directives in single tag so we use 
+    ng-container. ng-container does not create actual DOM element.
+</h4>
+<ul >
+    <li *ngFor="let item of students">
+        <ng-container *ngIf="item.age <= 20">{{item.name}} is {{item.age}} years old.</ng-container>
+    </li>
+</ul>
+
+<h4>ngClass</h4>
+
+<div>
+    <p [ngClass]="{'green-color': validUser, 'red-color': !validUser}"> Hi, I am in Pune </p>
+</div>
+
+<h4>ngStyle</h4>
+<div>
+    <p [ngStyle]="{ 'color':   validUser ? 'green' : 'red'}"> 
+            Implemented using ngStyle </p>
+</div>
+
+
+<p appFirstDirective> Using ElementRef
+
+</p>
+

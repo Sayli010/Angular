@@ -5,3 +5,30 @@
 <button  type="submit" (click)= "onSave()">Disabled</button><br><br><!--Event Binding-->
 <input [(ngModel)]="title"> <!--Two way binding-->
 <p>{{title}}</p>
+
+
+
+<h1>Component communication</h1>
+<p>1.@input() => 
+    Send Data from parent to child component</p>
+
+<p>2.@output() => 
+    Send Data from child to parent component</p>
+    <p>Data from child class:=> {{heading}}</p>
+<app-home [parentData]="title"
+        (childData)=detectData($event)>
+        <!-- ng-content  -->
+            <h2>ng-content => use ng-content tag in child html to display below contents.</h2>
+            <h3>This is child data written in parent component using child component selector.</h3>
+        <!-- ngContentChild -->
+            <p>ngContentChild is used to access child component data written in parent component into 
+                child component ts file.
+                ngContentChild is same as view child but view child uses to transfer data from html to ts
+                in same component.
+            </p>
+            <p #childComponentData>This is child data written in parent component.</p>
+            
+</app-home>
+
+
+<app-directives-demo></app-directives-demo>
